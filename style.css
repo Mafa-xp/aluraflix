@@ -1,0 +1,270 @@
+﻿body {
+
+
+  background: 
+    linear-gradient(45deg, #222222, #2e5bff, #9d50bb),
+    linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35));
+  background-blend-mode: overlay;
+  /* Define a cor de fundo da página com camada preta translúcida */
+  
+
+  color: #fff; /* Define a cor do texto principal */
+
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal; /* Define a fonte usada no site */
+
+  margin: 0; /* Remove a margem padrão do body */
+  min-height: 100vh; /* Garante que o body ocupe pelo menos toda a altura da tela */
+}
+
+
+/* Botão de alternância de tema */
+#theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 100;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.25s, color 0.25s, transform 0.2s;
+}
+
+#theme-toggle:hover,
+#theme-toggle:focus {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.07);
+}
+
+body.light-mode {
+  background: 
+    linear-gradient(45deg, #f5f7ff, #e8efff, #d6e2ff),
+    linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35));
+  background-blend-mode: overlay;
+  color: #222;
+}
+
+body.light-mode main {
+  color: #222;
+}
+
+body.light-mode h1,
+body.light-mode figcaption {
+  color: #1d1d1d;
+}
+
+body.light-mode nav.profiles {
+  background: none;
+}
+
+body.light-mode .profile {
+  color: #2b2b2b;
+}
+
+body.light-mode img {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+body.light-mode #theme-toggle {
+  border-color: rgba(0, 0, 0, 0.35);
+  background: rgba(255, 255, 255, 0.8);
+  color: #222;
+}
+
+main {
+  display: flex; /* Usa flexbox para layout */
+  flex-direction: column; /* Organiza os elementos em coluna */
+  align-items: center; /* Centraliza os itens horizontalmente */
+  justify-content: center; /* Centraliza os itens verticalmente */
+  min-height: 100vh; /* Garante altura mínima de 100% da tela */
+}
+
+h1 {
+  font-size: 2.5rem; /* Define o tamanho da fonte do título */
+  font-weight: bold; /* Deixa o texto em negrito */
+
+  font-family: "Archivo", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+
+  margin-bottom: 2rem; /* Espaço abaixo do título */
+  letter-spacing: 1px; /* Espaçamento entre letras */
+}
+
+section[aria-label="Perfis disponíveis"] {
+  width: 100%; /* Ocupa toda a largura disponível */
+  max-width: 600px; /* Limita a largura máxima */
+  display: flex; /* Usa flexbox */
+  justify-content: center; /* Centraliza os perfis */
+}
+
+.profiles-container {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.profiles-container > li {
+  width: 100%;
+}
+
+.profiles {
+  list-style: none;
+  display: flex; /* Usa flexbox para os perfis */
+  gap: 2rem; /* Espaço entre os perfis */
+  margin: 0;
+  padding: 0;
+}
+
+.profile {
+  text-decoration: none; /* Remove sublinhado dos links */
+  color: #fff; /* Cor do texto dos links */
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s; /* Suaviza animações de transformação e sombra */
+}
+
+figure {
+  margin: 0; /* Remove margem padrão */
+  display: flex; /* Usa flexbox */
+  flex-direction: column; /* Organiza em coluna */
+  align-items: center; /* Centraliza itens */
+}
+
+img {
+  width: 200px; /* Largura fixa da imagem */
+  height: 200px; /* Altura fixa da imagem */
+  border-radius: 8px; /* Bordas arredondadas */
+  object-fit: cover; /* Mantém proporção da imagem */
+  margin-bottom: 0.5rem; /* Espaço abaixo da imagem */
+  background: #222; /* Cor de fundo da imagem */
+  display: block; /* Exibe como bloco */
+  border: 1px transparent; /* Borda inicial invisível */
+}
+
+img:hover {
+  border: 1px solid #fff; /* Borda branca ao passar o mouse */
+}
+
+figcaption {
+  font-size: 1.5rem; /* Tamanho da fonte da legenda */
+  font-weight: 500; /* Peso da fonte */
+  margin-top: 0.5rem; /* Espaço acima da legenda */
+  letter-spacing: 0.5px; /* Espaçamento entre letras */
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  section[aria-label="Perfis disponíveis"] {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+  nav.profiles {
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  img {
+    width: 160px;
+    height: 160px;
+  }
+  figcaption {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 0.95rem;
+  }
+  main {
+    padding: 2rem 1rem;
+  }
+  h1 {
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  nav.profiles {
+    gap: 0.9rem;
+  }
+  img {
+    width: 130px;
+    height: 130px;
+  }
+  figcaption {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  section[aria-label="Perfis disponíveis"] {
+    max-width: 900px;
+  }
+  img {
+    width: 220px;
+    height: 220px;
+  }
+  figcaption {
+    font-size: 1.7rem;
+  }
+}
+
+/* ---------- GERENCIAR ---------- */
+
+.gerenciar {
+    margin-top: 20px;
+}
+
+.botao-gerenciar {
+    background: transparent;
+    border: 1px solid grey;
+    color: grey;
+    padding: 10px 30px;
+    font-size: 1vw;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    font-weight: 200;
+    transition: all 0.3s;
+}
+
+.botao-gerenciar:hover {
+    border-color: #e5e5e5;
+    color: #e5e5e5;
+}
+
+body.light-mode .botao-gerenciar:hover {
+    border-color: #222;
+    color: #222;
+}
+
+/* Logo Aluraflix na página inicial */
+.page-header {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.aluraflix-logo {
+    width: 140px;
+    max-width: 100%;
+    height: auto;
+    background-color: transparent;
+    pointer-events: none;
+    user-select: none;
+}
